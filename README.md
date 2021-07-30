@@ -1,5 +1,15 @@
 # **Behavioral Cloning** 
 
+To do:
+* Add Nvidia model image
+* Explain briefly about it
+* Add image of car
+* Image of flipped
+* Image of data augmentation
+* Image Normal
+* Grayscaling
+
+
 ## 1. Project Aim
 
 This project aims to train a neural network to drive a car inside a track without getting out of the lane.
