@@ -12,7 +12,7 @@ To do:
 
 ## 1. Project Aim
 
-This project aims to train a neural network to drive a car inside a track without getting out of the lane.
+This project aims to train a neural network to drive a car inside a track without getting out of the lane for at least one lap.
 
 ## 2. Steps
 
@@ -66,26 +66,28 @@ We collected the reverse laps to make make sure our model could generalize to va
 
 ### 4.2. Data Augmentation
 
-Data augmentation is a strategy that enables practitioners to significantly increase the diversity of data available for training models, without actually collecting new data. 
-Data augmentation techniques such as cropping, padding, and horizontal flipping are commonly used to train large neural networks. We perform data augmentation by flipping (mirroring) the image and add different lighting conditions to help reduce overfitting.
+Data augmentation is a strategy that enables practitioners to significantly increase the diversity of data available for training models, without actually collecting new data. Data augmentation techniques such as cropping, padding, and horizontal flipping are commonly used to train large neural networks. We perform data augmentation by flipping (mirroring) the image and add different lighting conditions to help reduce overfitting.
 
 ## 4. Model Architecture and Training
 
 ###  4.1.Model Architecture
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+We mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 1 as shown below.  
+
+<figure>
+ <center>
+  <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG" alt="radial" style="width:50%">
+  <figcaption><em>Figure 1 - Lane Line Finding</em></figcaption>
+</figure></center>
+
+To sum up, there are 27 millions connections and 250 thousand parameters in our architecture.
 
 ### 4.2. Hyperparameter Tuning and Selection 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+
+Our model is build using Sequential API of Keras framework as show in model.py file. To sum up, we use ReLU activation function, Adam optimizer, and a learning rate of 0.001. We train our model for 3 epochs.
+
+The model contains dropout layers and was trained and validated on different data sets to avoid overfitting. The model was tested by running it through the simulator. We then ensure that the vehicle could stay on the track for one lap.
 
 ## 5. Conclusion
 
 To conclude, we have trained a neural network models based on Nvidia on NVIDIA's End to End Learning for Self-Driving Cars paper (https://arxiv.org/pdf/1604.07316v1.pdf). Our model was able to make the car goes through the lap without ever going out of the track.
-
-
-
-
-
