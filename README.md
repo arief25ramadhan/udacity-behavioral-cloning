@@ -23,7 +23,6 @@ The steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
 [//]: # (Image References)
 
 [image1]: ./examples/placeholder.png "Model Visualization"
@@ -74,11 +73,11 @@ Data augmentation is a strategy that enables practitioners to significantly incr
 
 We mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 1 as shown below.  
 
-<figure>
- <center>
-  <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG" alt="radial" style="width:50%">
-  <figcaption><em>Figure 1 - Lane Line Finding</em></figcaption>
-</figure></center>
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG"  width="400">
+ <br>
+ <em>Figure 1 - Model's Architecture</em>
+</p>
 
 To sum up, there are 27 millions connections and 250 thousand parameters in our architecture.
 
