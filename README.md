@@ -1,15 +1,5 @@
 # **Behavioral Cloning** 
 
-To do:
-* Add Nvidia model image
-* Explain briefly about it
-* Add image of car
-* Image of flipped
-* Image of data augmentation
-* Image Normal
-* Grayscaling
-
-
 ## 1. Project Aim
 
 This project aims to train a neural network to drive a car inside a track without getting out of the lane for at least one lap.
@@ -23,18 +13,6 @@ The steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
-
-
 ## 3. Files in the repository
 
 My project includes the following files:
@@ -45,20 +23,20 @@ My project includes the following files:
 * model_final.h5 containing a trained convolution neural network 
 * writeup_report.md or writeup_report.pdf summarizing the results
 
-### 3.1. Submission includes functional code
+### 3.1. Submission includes functional code and video
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
-python drive.py model.h5
+python drive.py model_final.h5
 ```
-### 3.2. Submission code is usable and readable
-
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+Furthermore, we can also download the video.mp4 to see the autonomous drive of our car.
 
 ## 4. Dataset Preparation
 
-### 4.1. Dataset
+### 4.1. Data Collection and Preparation
 
-We drove the car movement for three laps in the sandy track. We tried to put our car in the middle lane and avoided going off track.
+We drove the car movement for three laps in the sandy track. We tried to put our car in the middle lane and avoided going off track. The image data from our drive is recorded and processed in the pipeline.
+
+The function preprocess in data_loader.py is where  
 
 ### 4.2. Data Augmentation
 
@@ -91,4 +69,4 @@ The model contains dropout layers and was trained and validated on different dat
 
 ## 5. Conclusion
 
-To conclude, we have trained a neural network models based on Nvidia on NVIDIA's End to End Learning for Self-Driving Cars paper (https://arxiv.org/pdf/1604.07316v1.pdf). Our model was able to make the car goes through the lap without ever going out of the track.
+To conclude, we have trained a neural network models based on Nvidia on NVIDIA's End to End Learning for Self-Driving Cars paper (https://arxiv.org/pdf/1604.07316v1.pdf). Our model was able to make the car goes through the lap without ever going out of the track, as recorded in the video.mp4 file.
