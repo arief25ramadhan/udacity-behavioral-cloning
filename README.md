@@ -55,7 +55,7 @@ At first, we mimic the architecture from Nvidia's End to End Learning for Self D
 </p>
 
 <p align="center">
- <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG"  width="400">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/model_sum.png"  width="400">
  <br>
  <em>Figure 2 - Our Model Architecture</em>
 </p>
