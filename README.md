@@ -37,26 +37,61 @@ We drove the car movement for three laps in the sandy track. We tried to put our
 
 The function preprocess_image in data_loader.py is where our preprocessing happens. This includes cropping on the regions of interest, resizing, quantizing, and normalization. The purpose of preprocessing is to extract the relevant info from the data, so it becomes lightweight but still highly functional. 
 
+Figure 1 displays the left, center, and right images as seen by our camera.
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_2021_07_25_09_00_02_678.jpg"  width="200">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/center_2021_07_25_09_00_02_678.jpg"  width="200">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/right_2021_07_25_09_00_02_678.jpg"  width="200">
+ <br>
+ <em>Figure 1 - Image Data from Recording: Left, Center, and Right Camera</em>
+</p>
+
+Next, we cropped the image to concentrate on the region of interest, as shown by Figure 2. 
+
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_cropped.jpg"  width="200">
+ <br>
+ <em>Figure 2 - Cropped Left Image</em>
+</p>
+
+After that, we transformed it into a size of 96x96 pixels. Figure 3 displays the resized left camera image.
+
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_resized.jpg"  width="200">
+ <br>
+ <em>Figure 3 - Resized Left Image</em>
+</p>
+
+Finally, we changed the image format into float32 and normalized it to make it more compact.
+
 ### 4.2. Data Augmentation
 
-We augmented our data to increase the diversity of the training data. We did that by flipping the left and right image of the car.
+We augmented our data to increase the diversity of the training data. We did that by flipping the left and right image of the car, as shown by Figure 4.
+
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_flipped.jpg"  width="300">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/right_flipped.jpg"  width="300">
+ <br>
+ <em>Figure 4 - Flipped Image: Left and Right Camera</em>
+</p>
+
 
 ## 4. Model Architecture and Training
 
 ###  4.1.Model Architecture
 
-At first, we mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 1 as shown below.  However, this makes our model fit too rigidly to the training set, while not performing well enough during the test. So we drop some of the layers and add dropout to avoid overfit from happening. Figure 2 informs the layer in our neural network model.
+At first, we mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 5 as shown below.  However, this makes our model fit too rigidly to the training set, while not performing well enough during the test. So we drop some of the layers and add dropout to avoid overfit from happening. Figure 6 informs the layer in our neural network model.
 
 <p align="center">
  <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG"  width="400">
  <br>
- <em>Figure 1 - Nvidia Model Architecture</em>
+ <em>Figure 5 - Nvidia Model Architecture</em>
 </p>
 
 <p align="center">
  <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/model_sum.png"  width="400">
  <br>
- <em>Figure 2 - Our Model Architecture</em>
+ <em>Figure 6 - Our Model Architecture</em>
 </p>
 
 
