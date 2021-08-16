@@ -23,7 +23,6 @@ My project includes the following files:
 * model_final.h5 containing a trained convolution neural network 
 * writeup_report.md or writeup_report.pdf summarizing the results
 
-### 3.1. Submission includes functional code and video
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
 python drive.py model_final.h5
@@ -36,7 +35,7 @@ Furthermore, we can also download the video.mp4 to see the autonomous drive of o
 
 We drove the car movement for three laps in the sandy track. We tried to put our car in the middle lane and avoided going off track. The image data from our drive is recorded and processed in the pipeline.
 
-The function preprocess in data_loader.py is where  
+The function preprocess_image in data_loader.py is where our preprocessing happens. This includes cropping on the regions of interest, resizing, quantizing, and normalization. The purpose of preprocessing is to extract the relevant info from the data, so it becomes lightweight but still highly functional. 
 
 ### 4.2. Data Augmentation
 
@@ -63,9 +62,9 @@ At first, we mimic the architecture from Nvidia's End to End Learning for Self D
 
 ### 4.2. Hyperparameter Tuning and Selection 
 
-Our model is build using Sequential API of Keras framework as show in model.py file. To sum up, we use ReLU activation function and Adam optimizer. We train our model for 100 epochs, in which, through our observation the model has reached an optimal value.
+Our model is build using Sequential API of Keras framework as show in model.py file. To sum up, we use ReLU activation function, Adam optimizer, and Mean Squared Error loss function. We train the model for 100 epochs, where we observed the model had reached an optimal value.
 
-The model contains dropout layers and was trained and validated on different data sets to avoid overfitting. The model was tested by running it through the simulator, where it must stay on the track for at least one lap.
+The model contains dropout layers and was trained and validated on different data sets to avoid overfitting. We tested the model by running it through the simulator, where our car must stay on track for at least one lap drive.
 
 ## 5. Conclusion
 
