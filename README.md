@@ -39,9 +39,9 @@ The function preprocess_image in data_loader.py is where our preprocessing happe
 
 Figure 1 displays the left, center, and right images as seen by our camera.
 <p align="center">
- <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_2021_07_25_09_00_02_678.jpg"  width="200">
- <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/center_2021_07_25_09_00_02_678.jpg"  width="200">
- <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/right_2021_07_25_09_00_02_678.jpg"  width="200">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_2021_07_25_09_00_02_678.jpg"  width="250">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/center_2021_07_25_09_00_02_678.jpg"  width="250">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/right_2021_07_25_09_00_02_678.jpg"  width="250">
  <br>
  <em>Figure 1 - Image Data from Recording: Left, Center, and Right Camera</em>
 </p>
@@ -49,7 +49,7 @@ Figure 1 displays the left, center, and right images as seen by our camera.
 Next, we cropped the image to concentrate on the region of interest, as shown by Figure 2. 
 
 <p align="center">
- <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_cropped.jpg"  width="200">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/sample_images/left_cropped.jpg"  width="500">
  <br>
  <em>Figure 2 - Cropped Left Image</em>
 </p>
