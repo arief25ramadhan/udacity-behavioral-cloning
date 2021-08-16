@@ -18,7 +18,7 @@ This project aims to train a neural network to drive a car inside a track withou
 
 The steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
-* Build, a convolution neural network in Keras that predicts steering angles from images
+* Build a convolution neural network in Keras that predicts steering angles from images
 * Train and validate the model with a training and validation set
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
@@ -38,11 +38,12 @@ The steps of this project are the following:
 ## 3. Files in the repository
 
 My project includes the following files:
-* model.py containing the script to create and train the model
+* model.py containing the script to build the model
+* main.py containing the script to train the model
+* data_loader.py where data is loaded and augmented
 * drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
+* model_final.h5 containing a trained convolution neural network 
 * writeup_report.md or writeup_report.pdf summarizing the results
-* utils.py containing the script to preprocess and augment image data
 
 ### 3.1. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -57,35 +58,36 @@ The model.py file contains the code for training and saving the convolution neur
 
 ### 4.1. Dataset
 
-We recorded the car movement through the sandy tracks. The laps we drove through wer:
-- 3 laps of forward direction
-- 2 laps of reverse direction
-
-We collected the reverse laps to make make sure our model could generalize to various situation, and not overfit to the specified track.
+We drove the car movement for three laps in the sandy track. We tried to put our car in the middle lane and avoided going off track.
 
 ### 4.2. Data Augmentation
 
-Data augmentation is a strategy that enables practitioners to significantly increase the diversity of data available for training models, without actually collecting new data. Data augmentation techniques such as cropping, padding, and horizontal flipping are commonly used to train large neural networks. We perform data augmentation by flipping (mirroring) the image and add different lighting conditions to help reduce overfitting.
+We augmented our data to increase the diversity of the training data. We did that by flipping the left and right image of the car.
 
 ## 4. Model Architecture and Training
 
 ###  4.1.Model Architecture
 
-We mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 1 as shown below.  
+At first, we mimic the architecture from Nvidia's End to End Learning for Self Driving Car paper. The architecture of our model is displayed by Figure 1 as shown below.  However, this makes our model fit too rigidly to the training set, while not performing well enough during the test. So we drop some of the layers and add dropout to avoid overfit from happening. Figure 2 informs the layer in our neural network model.
 
 <p align="center">
  <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG"  width="400">
  <br>
- <em>Figure 1 - Model's Architecture</em>
+ <em>Figure 1 - Nvidia Model Architecture</em>
 </p>
 
-To sum up, there are 27 millions connections and 250 thousand parameters in our architecture.
+<p align="center">
+ <img src="https://github.com/arief25ramadhan/udacity-behavioral-cloning/blob/main/cnn.PNG"  width="400">
+ <br>
+ <em>Figure 2 - Our Model Architecture</em>
+</p>
+
 
 ### 4.2. Hyperparameter Tuning and Selection 
 
-Our model is build using Sequential API of Keras framework as show in model.py file. To sum up, we use ReLU activation function, Adam optimizer, and a learning rate of 0.001. We train our model for 3 epochs.
+Our model is build using Sequential API of Keras framework as show in model.py file. To sum up, we use ReLU activation function and Adam optimizer. We train our model for 100 epochs, in which, through our observation the model has reached an optimal value.
 
-The model contains dropout layers and was trained and validated on different data sets to avoid overfitting. The model was tested by running it through the simulator. We then ensure that the vehicle could stay on the track for one lap.
+The model contains dropout layers and was trained and validated on different data sets to avoid overfitting. The model was tested by running it through the simulator, where it must stay on the track for at least one lap.
 
 ## 5. Conclusion
 
