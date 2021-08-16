@@ -11,16 +11,24 @@ from keras.preprocessing.image import img_to_array, load_img
 
 TARGET_SIZE = (96, 96)
 
+# Preprocess an image
 def preprocess_image(image):
-    
+
+    # Crop image
     cropped_image = image[45:145, :, :]
+    
+    # Resize image
     resized_image = cv2.resize(cropped_image, TARGET_SIZE)
+
+    # Change to float 32
     quantized_image = resized_image.astype(np.float32)
 
     #Normalize image
     normalized_image = quantized_image/255.0 - 0.5
     return normalized_image
 
+
+# Generate data
 def generate_data(data_frame):
     
     camera_images = []
@@ -49,12 +57,13 @@ def generate_data(data_frame):
         steering_angles.extend([steering_center, steering_left, steering_right])
         
         flip_mode = random.randint(1,2)
-            
-        # flip right
+
+        # Augmentation: Image flipping from left and right camera    
+        ## flip right
         if flip_mode == 1:
             steering_flip = -1*steering_right
             img_flip = cv2.flip(img_right, 1)
-      
+        ## flip left
         else:
             steering_flip = -1*steering_left
             img_flip = cv2.flip(img_left, 1)

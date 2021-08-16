@@ -13,7 +13,7 @@ X_train, y_train = generate_data(df)
 
 # Load model
 model = cnn_model()
-checkpoint = ModelCheckpoint('model_fix_2.h5', verbose=1, monitor='val_loss',save_best_only=True, mode='auto') 
+checkpoint = ModelCheckpoint('model_final.h5', verbose=1, monitor='val_loss',save_best_only=True, mode='auto') 
 
 print("Fitting the model")
 model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=100, batch_size=64, callbacks=[checkpoint])
